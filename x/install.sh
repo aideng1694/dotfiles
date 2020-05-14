@@ -2,7 +2,6 @@
 
 # Variables
 DOTFILES_DIR="$HOME/.dotfiles";
-INSTALL_DIR="$HOME"
 
 # If the installation directory doesn't exist, create it.
 if [[ ! -d "$INSTALL_DIR" ]]; then
