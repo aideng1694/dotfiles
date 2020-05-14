@@ -9,6 +9,9 @@ INSTALL_DIR="$HOME"
 # Backup files
 echo -e "\033[0;32mBacking up old dotfiles to \033[0;34m$BACKUP_DIR\033[0m";
 
+# Make the backup dir
+mkdir $BACKUP_DIR;
+
 # Bash Files
 mv "$HOME/.bashrc" "$BACKUP_DIR/bashrc";
 mv "$HOME/.bash_profile" "$BACKUP_DIR/bash_profile";
