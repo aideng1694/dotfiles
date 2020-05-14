@@ -13,4 +13,5 @@ alias pull="git pull"
 alias push="git push"
 alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
 alias s="subl .";
-alias start="npm start"
+alias start="npm start";
+alias git="hub";
