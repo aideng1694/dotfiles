@@ -1,0 +1,4 @@
+# Exclude old dotfiles
+# These where originally forked from https://github.com/holman/dotfiles
+/.old
+

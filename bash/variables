@@ -46,6 +46,7 @@ export COLOUR_RESET='\033[0m';
 
 # Set variables that my tools will depend on
 export PROJECT_DIR="${HOME}/Projects";
+export DOTFILES_DIR="${HOME}/.dotfiles";
 
 # System variables
 
