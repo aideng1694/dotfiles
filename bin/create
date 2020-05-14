@@ -1,0 +1,132 @@
+#!/usr/bin/env bash
+#
+# This binary creates an item for school, depending on the parameters
+
+notes=0;
+working=0;
+answers=0;
+helped=0;
+_date="$(date '+%d.%m.%C%y')"; # UK Date - 01.01.2020 = 1st of Jan, 2020
+
+function create_help () {
+  if [[ $helped -eq 1 ]]; then
+    return
+  else
+    helped=1
+  fi
+
+  echo -e "create, A tool that allows you to simply create school files";
+  echo -e "Usage: create [options]...";
+  echo -e "";
+  echo -e "Options:";
+  echo -e "  -h, --help            print this help";
+  echo -e "  --notes               create a notes file";
+  echo -e "  --working             create a working file";
+  echo -e "  --answers             create a answers file";
+  echo -e "";
+  echo -e "Email bug reports, questions, discussions to <aideng1694@yahoo.com> and/or open issues at";
+  echo -e "this project's GitHub page https://github.com/aideng1694/dotfiles";
+
+  exit
+}
+
+if [[ ! $1 == '' ]]; then
+  for param in $@; do
+    # Check the parameter against known params
+    case "$param" in
+      '--help')
+        create_help
+        ;;
+      '-h')
+        create_help
+        ;;
+      '--notes')
+        notes=1
+        ;;
+      '--working')
+        working=1
+        ;;
+      '--answers')
+        answers=1
+        ;;
+    esac
+  done
+else
+  create_help
+fi
+
+if [[ $notes -eq 1 ]]; then
+  # You have specified notes
+  if [[ $working -eq 1 || $answers -eq 1 ]]; then
+    # You have specified notes and something else
+    echo -e "You can only specify 1 type of file. Available types are:";
+    echo -e "    --notes";
+    echo -e "    --working";
+    echo -e "    --answers";
+
+    exit 1
+  else
+    # You have only specified notes
+    # Create note file
+    touch "$(pwd)/notes.txt";
+
+    # Forcably insert content
+    echo "[LINK_NAME: RAW_LINK]" > "$(pwd)/notes.txt";
+    echo "" >> "$(pwd)/notes.txt";
+    echo "Date: $_date     Title: <TITLE             HERE> Class: <CLASS  NAME  HERE>" >> "$(pwd)/notes.txt";
+    
+    # Finished!!!
+    echo -e "${COLOUR_GREEN}Finished creating notes file.${COLOUR_RESET}";
+  fi
+elif [[ $working -eq 1 ]]; then
+  # You have specified working
+  if [[ $notes -eq 1 || $answers -eq 1 ]]; then
+    # You have specified working and something else
+    echo -e "You can only specify 1 type of file. Available types are:";
+    echo -e "    --notes";
+    echo -e "    --working";
+    echo -e "    --answers";
+
+    exit 1
+  else
+    # You have only specified notes
+    # Create note file
+    touch "$(pwd)/working.txt";
+
+    # Forcably insert content
+    echo "[$_date] <subject_name>" > "$(pwd)/working.txt";
+    
+    # Finished!!!
+    echo -e "${COLOUR_GREEN}Finished creating working file.${COLOUR_RESET}";
+  fi
+elif [[ $answers -eq 1 ]]; then
+  # You have specified answers
+  if [[ $working -eq 1 || $notes -eq 1 ]]; then
+    # You have specified answers and something else
+    echo -e "You can only specify 1 type of file. Available types are:";
+    echo -e "    --notes";
+    echo -e "    --working";
+    echo -e "    --answers";
+
+    exit 1
+  else
+    # You have only specified answers
+    # Create answer file
+    touch "$(pwd)/answers.txt";
+
+    # Forcably insert content
+    echo "; TODO <@date>" > "$(pwd)/answers.txt";
+    echo "" >> "$(pwd)/answers.txt";
+    echo "[All resources are relative to: RAW_LINK]" > "$(pwd)/answers.txt";
+    echo "" >> "$(pwd)/answers.txt";
+    echo "Date: $_date     Title: <TITLE             HERE> Class: <CLASS  NAME  HERE>" >> "$(pwd)/answers.txt";
+    echo "" >> "$(pwd)/answers.txt";
+    echo "[Resource: <resource_name>]" >> "$(pwd)/answers.txt";
+    echo "" >> "$(pwd)/answers.txt";
+    echo "Questions" >> "$(pwd)/answers.txt";
+    echo "        #. <QUESTION>" >> "$(pwd)/answers.txt";
+    
+    # Finished!!!
+    echo -e "${COLOUR_GREEN}Finished creating answers file.${COLOUR_RESET}";
+  fi
+fi

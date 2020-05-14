@@ -54,7 +54,7 @@ export DOTFILES_DIR="${HOME}/.dotfiles";
 # ~/.bin is for scripts wrote by the user
 # ~/.local/bin is for applications installed by the user
 # ~/.deno/bin is for deno - https://deno.land/
-PATH="$HOME/bin:$HOME/.bin/$HOME/.local/bin:$HOME/.deno/bin:$PATH";
+PATH="$DOTFILES_DIR/bin:$HOME/bin:$HOME/.bin/$HOME/.local/bin:$HOME/.deno/bin:$PATH";
 
 # History File Config
 export HISTSIZE=5000;

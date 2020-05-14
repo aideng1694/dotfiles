@@ -8,6 +8,7 @@ shopt -s histappend
 source "$HOME/.dotfiles/bash/variables";
 # The rest of the files
 source "$HOME/.dotfiles/bash/aliases";
+source "$HOME/.dotfiles/bash/_completions";
 source "$HOME/.dotfiles/bash/_functions";
 source "$HOME/.dotfiles/bash/prompt";
 

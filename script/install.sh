@@ -45,6 +45,10 @@ ln -s "$DOTFILES_DIR/node/npmrc" "$INSTALL_DIR/.npmrc";
 
 mkdir $HOME/.npm-packages
 
+# Add bins
+chmod +x $DOTFILES_DIR/bin/*;
+chmod -w $DOTFILES_DIR/bin/*;
+
 # Update user
 echo -e "\033[0;32mDotfiles are located in \033[0;34m$DOTFILES_DIR\033[0m";
 echo -e "\033[0;32mDotfiles are installes in \033[0;34m$INSTALL_DIR\033[0m";

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Completions path
+COMPLETIONS_PATH="$DOTFILES_DIR/bash/completions"
+
+# source all the completions
+source "$COMPLETIONS_PATH/create-completions.bash";
