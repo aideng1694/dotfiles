@@ -6,8 +6,9 @@ BASH
   [ ] Add Functions directory and have a seperate file per function.
     This would use a file that source'd all the functions
 
-    [ ] Seperate functions into seperate files
-    [ ] Add sources to an import file in `bash/`
+    [x] Seperate functions into seperate files
+    [x] Add sources to an import file in `bash/`
+      The import file is `bash/_functions`
     [ ] Seperate function files into seperate directories
       Based on what the function does?
       Have sub-categories?

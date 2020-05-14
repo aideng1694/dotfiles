@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-function mkcd () {
-  mkdir "$@";
-  cd "$@";
-
-  return 0;
-}
-
 function create-project-help () {
   echo -e "create-project, A tool that allows you to simply create projects";
   echo -e "Usage: create-project [options]... [name]";
@@ -145,21 +138,4 @@ function create-project () {
 
   # Go back to where we where before
   cd $OLDPWD
-}
-
-function gs () {
-  echo -e "";
-  echo -e "*********************************************";
-  echo -e "   ${COLOUR_RED}DO NOT FORGET TO PULL BEFORE COMMITTING${COLOUR_RESET}";
-  echo -e "*********************************************";
-  echo -e "";
-  git status;
-}
-
-function bash-login () {
-  fortune | cowsay -f tux;
-
-  if [[ $LOGIN_SHELL -eq 1 ]]; then
-    echo "It's a login shell. I'll find something to do with this later."
-  fi
 }

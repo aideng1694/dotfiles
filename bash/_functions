@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Functions path
+FUNCTIONS_PATH="$DOTFILES_DIR/bash/functions"
+
+# source all the functions
+source "$FUNCTIONS_PATH/bash-login.sh";
+source "$FUNCTIONS_PATH/create-project.sh";
+source "$FUNCTIONS_PATH/gs.sh";
+source "$FUNCTIONS_PATH/mkcs.sh";
