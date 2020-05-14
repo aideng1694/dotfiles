@@ -1,0 +1,9 @@
+[user]
+name = Aiden Garth
+email = aideng1694@yahoo.com
+signingkey = 80521715B91EE477
+
+[commit]
+	gpgsign = true
+[core]
+	editor = vim

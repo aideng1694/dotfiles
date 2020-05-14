@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Always load the same config. Regardless of a login shell.
+source "$HOME/.bashrc";
+
+# Set a Login Shell variable to check if it is a login shell easily.
+export LOGIN_SHELL=1;

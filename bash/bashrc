@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+shopt -s autocd
+shopt -s histappend
+
+# Source all custom bash files
+# The variables file is sourced first as other files depend on it.
+source "$HOME/.dotfiles/bash/variables";
+# The rest of the files
+source "$HOME/.dotfiles/bash/aliases";
+source "$HOME/.dotfiles/bash/functions";
+source "$HOME/.dotfiles/bash/prompt";
+
+# Run my custom login function
+bash-login;

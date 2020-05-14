@@ -1,0 +1,16 @@
+alias a="atom .";
+alias c="code .";
+alias ga="git add"
+alias gaa="git add -A"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias la="ls -A"
+alias ll="ls -Al"
+alias ls="ls --color=auto"
+alias o="nautilus . |> /dev/null &"
+alias open="xdg-open"
+alias pull="git pull"
+alias push="git push"
+alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
+alias s="subl .";
+alias start="npm start"

@@ -1,0 +1,5 @@
+init.author.name=Aiden Garth
+init.author.email=aideng1694@yahoo.com
+init.author.url=https://github.com/aideng1694
+init.licence=GPL-3.0
+prefix=${HOME}/.npm-packages
