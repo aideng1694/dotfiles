@@ -28,7 +28,7 @@ This will update to the latest version on the [GitHub][dotfiles]. You ***will***
 
 ```bash
 # The variable $DOTFILES_DIR should be set by bash/variables
-bash $DOTFILES_DIR/script/uninstall.sh
+bash $DOTFILES_DIR/script/update.sh
 ```
 
 [owner]: https://github.com/aideng1694
